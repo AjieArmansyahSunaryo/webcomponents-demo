@@ -1,6 +1,7 @@
 # Hands-on: Web Components
 
-Implementasi tiga komponen **Web Components** sesuai instruksi tugas dosen.
+Implementasi tiga **Web Components** sesuai modul yang diberikan dengan tambahan beberapa modifikasi.
+Web Deploy: https://ajiearmansyahsunaryo.github.io/webcomponents-demo/
 
 ---
 
