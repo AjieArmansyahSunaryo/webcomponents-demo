@@ -26,8 +26,6 @@ Web Deploy: https://ajiearmansyahsunaryo.github.io/webcomponents-demo/
 
 - **Tombol fungsional**: − / + / Reset.  
 - **Tekan-tahan (press/hold)** untuk auto-repeat.  
-- **Hint keyboard** di setiap kontrol:  
-  `Keyboard: +/-, 0 untuk reset. Tahan tombol untuk repeat.`  
 - **UI gelap** (dark theme), responsif, dan rapi.  
 
 ---
