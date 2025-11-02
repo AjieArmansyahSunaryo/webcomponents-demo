@@ -36,7 +36,6 @@ class CounterDisplay extends HTMLElement {
   }
 
   connectedCallback() {
-    // Load from storage if provided
     const k = this.getAttribute('storage-key');
     if (k) {
       const saved = window.localStorage.getItem(k);
@@ -59,7 +58,6 @@ class CounterDisplay extends HTMLElement {
     if (n) {
       n.textContent = this._value;
       n.classList.remove('bump');
-      // trigger reflow for animation
       void n.offsetWidth;
       n.classList.add('bump');
     }
