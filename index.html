@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hands-on: Web Components</title>
+  <script src="counter-display.js"></script>
+  <script src="counter-controls.js"></script>
+  <script src="combined-counter.js"></script>
+  <script src="counter-display-b.js"></script>
+  <script src="counter-controls-b.js"></script>
+  <script src="identity-badge.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;}
+    :root { --gap: 16px; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 24px; background:#0f172a; color:#e2e8f0; }
+    header { display:flex; align-items:center; justify-content:space-between; gap: var(--gap); margin-bottom:24px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--gap); align-items: start; }
+    section { overflow:hidden; background:#0b1220; border:1px solid #1f2937; border-radius:14px; padding:16px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+    h1 { font-size: 1rem; margin: 0 0 8px; }
+    .muted { color:#93a3b8; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <identity-badge name="Ajie Armansyah Sunaryo" nim="24/545286/PA/23170"></identity-badge>
+    <div class="muted">Hands-on: Web Components</div>
+  </header>
+
+  <div class="grid">
+    <!-- KOMPONEN 1 & 2 -->
+    <section>
+      <h1>Komponen 1 &amp; 2</h1>
+      <counter-display id="display" title="Title" value="0" storage-key="counter:event"></counter-display>
+      <counter-controls id="controls"></counter-controls>
+      <script>
+        (function() {
+          const display = document.getElementById('display');
+          const controls = document.getElementById('controls');
+          controls.addEventListener('count-change', e => {
+            display.count = display.count + e.detail.delta;
+          });
+          controls.addEventListener('set-count', e => {
+            display.count = e.detail.value;
+          });
+        })();
+      </script>
+    </section>
+
+    <!-- KOMPONEN 3 (GABUNGAN) -->
+    <section>
+      <h1>Komponen 3 (gabungan)</h1>
+      <combined-counter title="Title" value="0" storage-key="counter:combined"></combined-counter>
+    </section>
+
+    <!-- VARIAN B -->
+    <section>
+      <h1>Komponen 1 &amp; 2 Varian B</h1>
+      <counter-display-b id="displayB" title="Title" value="0" storage-key="counter:target"></counter-display-b>
+      <counter-controls-b target="displayB"></counter-controls-b>
+    </section>
+  </div>
+</body>
+</html>
